@@ -1,0 +1,8 @@
+node_modules/
+*.log
+.pnpm-store/
+.DS_Store
+# Build artifacts: commit lib/*.js + lib/types (git installs must run without
+# a build step), but keep sourcemaps out of the repo.
+lib/**/*.js.map
+lib/**/*.d.ts.map

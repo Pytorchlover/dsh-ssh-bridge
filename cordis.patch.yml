@@ -1,0 +1,5 @@
+# Bundle patch for dsh-ssh-bridge: contributes one plugin row to the loader.
+# Applied when the package rides a profile bundle (dsh plugin add).
+- insert:
+  - id: ssh-bridge
+    name: dsh-ssh-bridge
