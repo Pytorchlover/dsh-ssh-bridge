@@ -27,15 +27,17 @@ DSH 会话 ──tools/execute 桥──▶ SSH 引擎 ──▶ 远程服务器
 
 ## 安装
 
+> `--profile` 后跟你的 DSH profile 名（大多数部署是 `web`，用 `dsh plugin --profile <名字> list` 可查看已有 profile）。
+
 ```sh
 # 方式一：从 GitHub 安装（lib/ 已提交，无需构建）
-dsh plugin --profile <你的profile> add github:<你的用户名>/dsh-ssh-bridge
-dsh web   # 重启生效
+dsh plugin --profile web add github:Pytorchlover/dsh-ssh-bridge
+dsh web   # 重启 dsh web 生效（已在运行的话，重启对应进程）
 
-# 方式二：本地开发
-git clone https://github.com/<你的用户名>/dsh-ssh-bridge && cd dsh-ssh-bridge
+# 方式二：本地开发（改代码后 pnpm build + 刷新页面即可，服务端改动需重启）
+git clone https://github.com/Pytorchlover/dsh-ssh-bridge && cd dsh-ssh-bridge
 pnpm install && pnpm build
-dsh plugin --profile <你的profile> add link:$(pwd)
+dsh plugin --profile web add link:$(pwd)
 ```
 
 ## 使用
